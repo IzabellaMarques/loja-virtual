@@ -2,8 +2,6 @@ package com.dev.backend.controller;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,32 +11,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dev.backend.entity.Cidade;
 import com.dev.backend.entity.Estado;
-import com.dev.backend.service.EstadoService;
+import com.dev.backend.service.CidadeService;
 
 @RestController
-@RequestMapping("/api/estado")
-public class EstadoController {
+@RequestMapping("/api/cidade")
+public class CidadeController {
 
     @Autowired
-    private EstadoService service;
+    private CidadeService service;
 
     @GetMapping("/")
-    public List<Estado> buscarTodos() {
+    public List<Cidade> buscarTodos() {
         return service.buscarTodos();
     }
 
     @PostMapping("/")
-    public Estado inserir(@RequestBody Estado estado) {
-        return service.inserir(estado);
+    public Cidade inserir(@RequestBody Cidade cidade) {
+        return service.inserir(cidade);
     }
 
     @PutMapping("/")
-    public Estado alterar(@RequestBody Estado estado) {
-        return service.alterar(estado);
+    public Cidade alterar(@RequestBody Cidade cidade) {
+        return service.alterar(cidade);
     }
 
     @DeleteMapping("/{id}")
