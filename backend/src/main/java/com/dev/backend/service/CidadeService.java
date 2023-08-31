@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dev.backend.entity.Cidade;
-import com.dev.backend.repository.CidadeRepostory;
+import com.dev.backend.repository.CidadeRepository;
 
 @Service
 public class CidadeService {
 
     @Autowired
-    private CidadeRepostory respository;
+    private CidadeRepository respository;
 
     public List<Cidade> buscarTodos() {
         return respository.findAll();
