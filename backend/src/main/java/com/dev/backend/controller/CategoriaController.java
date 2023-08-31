@@ -1,9 +1,8 @@
 package com.dev.backend.controller;
 
 import com.dev.backend.entity.Categoria;
-import com.dev.backend.entity.Pessoa;
 import com.dev.backend.service.CategoriaService;
-import com.dev.backend.service.PessoaService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/categoria")
+@AllArgsConstructor
 public class CategoriaController {
 
     @Autowired

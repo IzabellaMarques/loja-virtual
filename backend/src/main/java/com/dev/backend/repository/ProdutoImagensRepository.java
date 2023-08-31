@@ -1,7 +1,6 @@
 
 package com.dev.backend.repository;
 
-import com.dev.backend.entity.Produto;
 import com.dev.backend.entity.ProdutoImagens;
 import org.springframework.data.jpa.repository.JpaRepository;
 

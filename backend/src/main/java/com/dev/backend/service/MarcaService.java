@@ -1,9 +1,8 @@
 package com.dev.backend.service;
 
 import com.dev.backend.entity.Marca;
-import com.dev.backend.entity.Pessoa;
 import com.dev.backend.repository.MarcaRepository;
-import com.dev.backend.repository.PessoaRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class MarcaService {
 
     @Autowired

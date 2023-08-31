@@ -1,15 +1,16 @@
 package com.dev.backend.service;
 
-import java.util.Date;
-import java.util.List;
-
+import com.dev.backend.entity.Cidade;
+import com.dev.backend.repository.CidadeRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.backend.entity.Cidade;
-import com.dev.backend.repository.CidadeRepository;
+import java.util.Date;
+import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class CidadeService {
 
     @Autowired

@@ -1,17 +1,15 @@
 package com.dev.backend.service;
 
-import com.dev.backend.entity.Produto;
 import com.dev.backend.entity.ProdutoImagens;
 import com.dev.backend.repository.ProdutoImagensRepository;
 import com.dev.backend.repository.ProdutoRepository;
+import lombok.AllArgsConstructor;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class ProdutoImagensService {
 
     @Autowired
@@ -32,15 +31,14 @@ public class ProdutoImagensService {
     }
 
     public ProdutoImagens inserir(Long idProduto, MultipartFile file) {
-        Produto produto = produtoRepository.findById(idProduto).get();
-        ProdutoImagens imagens = new ProdutoImagens();
+        var produto = produtoRepository.findById(idProduto).get();
+        var imagens = new ProdutoImagens();
 
         try {
             if (!file.isEmpty()) {
                 byte[] bytes = file.getBytes();
                 String nomeImagem = produto.getId() + file.getOriginalFilename();
-                Path caminho = Paths
-                        .get("c:/imagens/" +nomeImagem );
+                Path caminho = Paths.get("c:/Users/Izabella Marques/Pictures/" +nomeImagem );
                 Files.write(caminho, bytes);
                 imagens.setNome(nomeImagem);
 

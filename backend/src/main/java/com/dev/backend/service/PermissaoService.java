@@ -1,10 +1,8 @@
 package com.dev.backend.service;
 
 import com.dev.backend.entity.Permissao;
-import com.dev.backend.entity.Produto;
 import com.dev.backend.repository.PermissaoRepository;
-import com.dev.backend.repository.ProdutoRepository;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class PermissaoService {
 
     @Autowired
